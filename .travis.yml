@@ -2,10 +2,10 @@ sudo: required
 language: node_js
 node_js:
   - "6"
-env  
-  - NODE_ENV=development  
 before_script:
-  - npm install -g gulp
+  - npm install -g gulp  
+env:  
+  - NODE_ENV=development  
 addons:
   apt:
     packages:
