@@ -1,17 +1,19 @@
 {
   "version": "0.0.1",
   "name": "evernote-linux",
-  "mainApplication":{
+  "mainApplication": {
     "height": 768,
     "width": 1024,
     "isBorder": false,
-    "isFullscreenable":true
+    "isFullscreenable": true
   },
-  "splash":{
+  "splash": {
     "height": 768,
     "width": 1024,
     "isBorder": false,
-    "isFullscreenable":true
+    "isFullscreenable": true
+  },
+  "credentials": {
+    "location": "credentials/.cred"
   }
-
 }

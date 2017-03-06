@@ -6,14 +6,14 @@ const {app, BrowserWindow} = require('electron')
 const path                 = require('path')
 const url                  = require('url')
 const config               = require('./src/app/app.config.json')
-
+const _                    = require('lodash')
+const fs                   = require('fs')
 /**
  * mainApplicationWindow is the parent of the application
  * splashWindow is the child of the above
  */
 let mainApplicationWindow
 let splashWindow
-
 
 //initiates the windows
 function createWindow () {
@@ -26,7 +26,7 @@ function createWindow () {
     show: false
   })
   
-  splashWindow          = new BrowserWindow({
+  splashWindow = new BrowserWindow({
     parent: mainApplicationWindow,
     width: config.splash.width,
     height: config.splash.height,
@@ -35,8 +35,13 @@ function createWindow () {
     show: false
   })
   
-  // and load the index.html of the app.
   splashWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'public/splash.html'),
+    protocol: 'file',
+    slashes: true
+  }))
+  // and load the index.html of the app.
+  mainApplicationWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'public/index.html'),
     protocol: 'file:',
     slashes: true
@@ -54,8 +59,23 @@ function createWindow () {
     splashWindow = null
   })
   
-  splashWindow.once('ready-to-show', () => {
-    splashWindow.show()
+  mainApplicationWindow.once('ready-to-show', () => {
+    let credentialLocation = url.format({
+      pathname: path.join(app.getPath('userData'), config.credentials.location),
+      protocol: 'file',
+      slashes: true
+    })
+    if (fs.existsSync(credentialLocation)) {
+      //then load the credentials
+      let credentials = fs.readFileSync(credentialLocation)
+      console.log('we have credentials')
+    }
+    else {
+      console.log('We don\'t have credentials')
+      
+      splashWindow.show()
+      
+    }
   })
   
 }
