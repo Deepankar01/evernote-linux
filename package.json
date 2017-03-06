@@ -1,0 +1,42 @@
+{
+  "name": "evernote-linux",
+  "version": "1.0.0",
+  "description": "Evernote Application for Linux",
+  "main": "main.js",
+  "scripts": {
+    "test": "gulp build && react-scripts build && vows --spec",
+    "start": "gulp build && react-scripts build && .\\node_modules\\.bin\\electron .",
+    "build": "gulp build && react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepankar01/evernote-linux.git"
+  },
+  "keywords": [
+    "Electron",
+    "Evernote",
+    "SDK"
+  ],
+  "author": "Deepankar Agrawal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Deepankar01/evernote-linux/issues"
+  },
+  "homepage": "https://github.com/Deepankar01/evernote-linux#readme",
+  "dependencies": {
+    "electron": "^1.6.1",
+    "evernote": "^2.0.1-beta",
+    "moment": "^2.17.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "voca": "^1.3.0",
+    "vows": "^0.8.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-less": "^3.3.0",
+    "react-scripts": "^0.9.3",
+    "standard": "^9.0.0"
+  }
+}
