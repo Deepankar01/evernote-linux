@@ -1,0 +1,47 @@
+@import "variables";
+@import "mixins";
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background: @evernote-color;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.home-logo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  .elephant {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    img {
+      margin: auto;
+      height: 40vh;
+      padding-bottom: 4vh;
+    }
+    .progress-flex {
+      display: flex;
+      width: 100%;
+      align-content: center;
+      align-items: center;
+      .progress-box {
+        display: flex;
+        margin: auto;
+        width: 40vh;
+        .progress {
+          background-color: @evernote-elephant-color;
+          margin: auto;
+          .indeterminate {
+            background-color: whitesmoke;
+          }
+        }
+      }
+    }
+
+  }
+
+}
