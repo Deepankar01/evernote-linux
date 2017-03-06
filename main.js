@@ -14,21 +14,27 @@ const config               = require('./src/app/app.config.json')
 let mainApplicationWindow
 let splashWindow
 
+
+//initiates the windows
 function createWindow () {
   // Create the browser window.
   mainApplicationWindow = new BrowserWindow({
-    width: config.width,
-    height: config.height,
-    fullscreenable: true,
-    title: config.name,
+    width: config.mainApplication.width,
+    height: config.mainApplication.height,
+    fullscreenable: config.mainApplication.isFullscreenable,
+    title: config.mainApplication.name,
     show: false
   })
+  
   splashWindow          = new BrowserWindow({
     parent: mainApplicationWindow,
-    frame: config.isBorder,
+    width: config.splash.width,
+    height: config.splash.height,
+    frame: config.splash.isBorder,
     modal: true,
     show: false
   })
+  
   // and load the index.html of the app.
   splashWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'public/index.html'),
