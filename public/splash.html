@@ -38,5 +38,15 @@
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="build/vendor/jquery/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="build/vendor/materialize/js/materialize.min.js"></script>
+<script>
+  const {ipcRenderer} = require('electron')
+
+  ipcRenderer.send('asynchronous-message', 'ping')
+
+  ipcRenderer.on('asynchronous-message', (event, arg) => {
+    alert(arg) // prints "pong"
+  })
+
+</script>
 </body>
 </html>

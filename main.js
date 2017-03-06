@@ -2,12 +2,12 @@
  This file is the main thread for electron
  */
 
-const {app, BrowserWindow} = require('electron')
-const path                 = require('path')
-const url                  = require('url')
-const config               = require('./src/app/app.config.json')
-const _                    = require('lodash')
-const fs                   = require('fs')
+const {app, BrowserWindow, ipcMain} = require('electron')
+const path                          = require('path')
+const url                           = require('url')
+const config                        = require('./src/app/app.config.json')
+const fs                            = require('fs')
+
 /**
  * mainApplicationWindow is the parent of the application
  * splashWindow is the child of the above
@@ -22,7 +22,7 @@ function createWindow () {
     width: config.mainApplication.width,
     height: config.mainApplication.height,
     fullscreenable: config.mainApplication.isFullscreenable,
-    title: config.mainApplication.name,
+    title: config.name,
     show: false
   })
   
@@ -32,14 +32,9 @@ function createWindow () {
     height: config.splash.height,
     frame: config.splash.isBorder,
     modal: true,
-    show: false
+    show: true
   })
   
-  splashWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'public/splash.html'),
-    protocol: 'file',
-    slashes: true
-  }))
   // and load the index.html of the app.
   mainApplicationWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'public/index.html'),
@@ -47,8 +42,11 @@ function createWindow () {
     slashes: true
   }))
   
-  // Open the DevTools.
-  //splash.webContents.openDevTools()
+  splashWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'public/splash.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
   
   // Emitted when the window is closed.
   mainApplicationWindow.on('closed', () => {
@@ -68,19 +66,28 @@ function createWindow () {
     if (fs.existsSync(credentialLocation)) {
       //then load the credentials
       let credentials = fs.readFileSync(credentialLocation)
+      splashWindow.webContents.on('did-finish-load', () => {
+        console.log('sending the data')
+        splashWindow.webContents.send('credentials', credentials)
+      })
       console.log('we have credentials')
     }
     else {
       console.log('We don\'t have credentials')
-      
-      splashWindow.show()
-      
+      splashWindow.webContents.on('did-finish-load', () => {
+        splashWindow.webContents.send('credentials', '')
+      })
     }
   })
   
 }
 
 app.on('ready', createWindow)
+
+ipcMain.on('credentials', (event, arg) => {
+  //persist the credentials
+  console.log(arg)  // prints "ping"
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
