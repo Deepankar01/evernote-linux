@@ -9,14 +9,14 @@ gulp.task('css', function () {
     return gulp.src('css/*.less')
         .pipe(less())
         .pipe(minifyCSS())
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('public/build/css'))
 });
 
 
 //copy task
 gulp.task('copy', () => gulp
     .src('src/app/vendor/**')
-    .pipe(gulp.dest('build/vendor')));
+    .pipe(gulp.dest('public/build/vendor')));
 
 
 gulp.task('build', ['css', 'copy']);
