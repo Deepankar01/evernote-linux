@@ -1,0 +1,108 @@
+@import "variables";
+@import "mixins";
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background: @evernote-color;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.home-logo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  .elephant {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    #elephant-logo {
+      margin: auto;
+      height: 14rem;
+      padding-bottom: 1rem;
+    }
+    .evernote-text{
+      display: flex;
+      flex-direction:row;
+      align-items: center;
+      align-content: center;
+      width:100%;
+      div{
+        display: flex;
+        margin:auto;
+        img{
+        height:4.6rem;
+        padding-bottom: 2rem;
+        padding-right:0.2rem;
+      }
+      span{
+        color:@linux-color;
+        font-size: 2.6rem;
+        font-family: 'Baloo Bhaina', cursive;
+        text-shadow: 0.2rem 0rem white;
+      }
+      }
+      
+    }
+    .progress-flex {
+      display: flex;
+      width: 100%;
+      align-content: center;
+      align-items: center;
+      .progress-box {
+        display: flex;
+        margin: auto;
+        width: 23rem;
+        .progress {
+          background-color: @evernote-elephant-color;
+          margin: auto;
+          .indeterminate {
+            background-color: whitesmoke;
+          }
+        }
+      }
+    }
+
+    .signup-options{
+      display: flex;
+      width:100%;
+      align-content: center;
+      align-items: center;
+      .option-box{
+        display: flex;
+        margin:auto;
+        button {
+          margin: auto;
+          margin-right:2rem;
+          width: 10rem;
+          height: 3.0rem;
+          border-radius: 1rem;
+          color: @evernote-color-tint;
+          font-size:1.1rem;
+          font-weight: bold;
+          letter-spacing: 0.06rem;
+          span{
+            text-transform: none;
+          }
+        }
+        button:last-child{
+          margin-right:0rem;
+        }
+      }
+    }
+
+    .progress-text{
+      display: flex;
+      width:100%;
+      align-content: center;
+      align-items: center;
+      .text{
+        margin:auto;
+      }
+    }
+
+  }
+
+}
