@@ -13,34 +13,57 @@ body,html{
     .toolsbar{
         display: flex;
         flex-direction: column;
-        width:5%;
+        width:@toolbar-width;
         background-color: @evernote-toolbar-color;
+        border-right: 0.21rem solid @evernote-toolbar-border-color;
         .evernote-logo{
             margin: auto;
+              border-bottom:0.2rem solid @evernote-toolbar-border-color;
             img{
                 height:3.2rem;
-                margin-top:1rem;
-                margin-bottom:2rem;
+                margin-bottom:1rem;
+                align-self: flex-start;
+            }
+        }
+        .user-photo{
+            margin:auto;
+            padding: 1rem;
+            padding-top: 3rem;
+            border-top:0.2rem solid @evernote-toolbar-border-color;
+            i {
+                align-self: flex-end;
+                font-size: 1.6rem;
+                color: @evernote-tool-icons;
             }
         }
         .tool{
             margin: auto;
-            padding: 1rem;
+            margin-top:0.0rem;
             i {
+                font-size: 1.6rem;
+                padding:0rem 1rem 0rem 1rem;
                 color: @evernote-tool-icons;
             }
+        }
+
+        .tool:nth-child(4){
+            padding-bottom: 1rem;
+             border-bottom: 0.2rem solid @evernote-toolbar-border-color;
+        }
+        .tool:nth-child(5){
+            padding-top:0.3rem;
         }
     }
     .expbar1{
         display: flex;
         flex-direction: column;
-        width:15%;
+        width:@expbar1-width;
         background-color: deeppink;
     }
     .expbar2{
         display: flex;
         flex-direction: column;
-        width:100%;
+        width:@expbar2-width;
         background-color: seagreen;
     }
 }

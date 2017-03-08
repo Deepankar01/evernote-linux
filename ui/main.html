@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <script src="public/build/vendor/pacejs/pace.min.js"></script>
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="public/build/vendor/materialize/css/materialize.min.css" media="screen,projection"
     />
@@ -17,15 +18,41 @@
     <div class="main">
 
         <div class="toolsbar">
+            <!--evernote log-->
             <div class="evernote-logo">
                 <img src="public/build/images/elephant.svg" />
             </div>
-            <div class="tool">
-                <i class="fa fa-2x fa-clock-o"></i>
+            <!--end evernote logo-->
+
+            <!--tool icon-->
+            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+                <i class="fa fa-plus"></i>
             </div>
-            <div class="tool">
-                <i class="fa fa-2x fa-clock-o"></i>
+            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+                <i class="fa fa-search"></i>
             </div>
+            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+                <i class="fa fa-comments-o"></i>
+            </div>
+            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+                <i class="fa fa-star-o"></i>
+            </div>
+            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+                <i class="fa fa-book"></i>
+            </div>
+            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+                <i class="fa fa-tags"></i>
+            </div>
+            <!--end of tool icon-->
+
+            <!--user photo-->
+            <div class="user-photo">
+                <i class="fa fa-user"></i>
+            </div>
+            <!--end user photo-->
         </div>
 
         <div class="expbar1">asdadaa</div>
@@ -38,6 +65,11 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="public/build/vendor/jquery/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="public/build/vendor/materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tooltipped').tooltip({ delay: 50 });
+        });
+    </script>
 </body>
 
 </html>
