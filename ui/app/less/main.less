@@ -1,2 +1,46 @@
 @import 'variables';
 @import 'mixins';
+
+body,html{
+    height:100%;
+    width:100%;
+    display: flex;
+}
+.main{
+    display: flex;
+    width:100%;
+    flex-direction: row;
+    .toolsbar{
+        display: flex;
+        flex-direction: column;
+        width:5%;
+        background-color: @evernote-toolbar-color;
+        .evernote-logo{
+            margin: auto;
+            img{
+                height:3.2rem;
+                margin-top:1rem;
+                margin-bottom:2rem;
+            }
+        }
+        .tool{
+            margin: auto;
+            padding: 1rem;
+            i {
+                color: @evernote-tool-icons;
+            }
+        }
+    }
+    .expbar1{
+        display: flex;
+        flex-direction: column;
+        width:15%;
+        background-color: deeppink;
+    }
+    .expbar2{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        background-color: seagreen;
+    }
+}
