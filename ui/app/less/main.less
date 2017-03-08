@@ -62,9 +62,19 @@ body,html{
     }
     .expbar1{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width:@expbar1-width;
-        background-color: deeppink;
+        background-color: @expbar1-color;
+        .heading{
+            align-self: flex-start;
+            padding:1rem;
+            span{
+                letter-spacing: 0.1rem;
+                font-size:1.5rem;
+                font-weight:500;
+                color:@expbar1-heading-color;
+            }
+        }
     }
     .expbar2{
         display: flex;
