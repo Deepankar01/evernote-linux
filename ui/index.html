@@ -41,7 +41,7 @@
             <div class="signup-options">
                 <div class="option-box">
                     <a class="btn white" id="login"><span>Login</span></a>
-                    <a class="btn white" id="signup"><span>Signup</span></a>
+                    <a class="btn white signup"><span>Signup</span></a>
                 </div>
             </div>
 
@@ -51,14 +51,15 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="last_name" type="text" class="validate white-text">
-                                <label for="last_name"class="white-text">Email</label>
+                                <label for="last_name" class="white-text">Email</label>
                             </div>
                             <div class="input-field col s12">
                                 <input id="last_name" type="password" class="validate white-text">
                                 <label for="last_name" class="white-text">Password</label>
                             </div>
                             <div class="input-field col s12 center">
-                                <button class="btn white evernote-green-text" id="clickLogin"><span>Login</span></button>
+                                <button href="javascript:login()" class="btn white evernote-green-text" id="clickLogin" type="submit"><span>Login</span></button>
+                                <a href="javascript:signupAnimate()" class="white-text signup"><span>Signup</span></a>
                             </div>
                         </div>
                     </form>
@@ -74,6 +75,24 @@
     <script type="text/javascript" src="public/build/vendor/jquery/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="public/build/vendor/materialize/js/materialize.min.js"></script>
     <script>
+
+        /**
+         * Login Function  
+         **/
+        $("#login-form").submit(function(event){
+            event.preventDefault();
+            window.location.assign("main.html")
+        })
+
+        //TODO still need to decide what we need to do
+        /**
+         * Weather api will give the signup stuff
+         **/
+        function signupAnimate() {
+
+            alert("login signup");
+        }
+
         $("#login").click(function () {
 
             $("#elephant-logo").animate({
@@ -88,12 +107,12 @@
                 "height": "3.6rem"
             }, 500, "linear", function () { });
 
-             $(".home-logo").animate({
+            $(".home-logo").animate({
                 "margin-bottom": "5rem"
             }, 500, "linear", function () { });
 
             $("#login").delay(500).hide();
-            $("#signup").delay(500).hide();
+            $(".option-box .signup").delay(500).hide();
             $("#login-form").delay(500).show();
         });
     </script>
