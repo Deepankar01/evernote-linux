@@ -39,11 +39,17 @@ body,html{
         .tool{
             margin: auto;
             margin-top:0.0rem;
+             .active{
+                    color: @evernote-toolbar-icon-active-color;
+                    &:hover{ color:@evernote-toolbar-icon-active-color;}
+                }
             i {
                 font-size: 1.6rem;
                 padding:0rem 1rem 0rem 1rem;
                 color: @evernote-tool-icons;
-            }
+                &:hover { color:@evernote-toolbar-icon-hover-color; }
+             }
+             
         }
 
         .tool:nth-child(4){
