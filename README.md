@@ -3,6 +3,8 @@
 
 Evernote for linux
 
+![Evernote linux logo](http://github.com/evernote-linux/screenshots/evernote-linux-logo.png)
+
 This is still an unofficial release but have tried to make the look and feel of the application as original as possible. 
 
 Still under construction 

@@ -9,6 +9,24 @@ body, html {
   align-items: center;
   align-content: center;
 }
+.row{
+  margin-bottom:0;
+}
+
+/* label underline focus color */
+   .input-field input[type=text]:focus{
+     border-bottom: 1px solid #fff;
+     box-shadow: 0 1px 0 0 #fff;
+   }
+    .input-field input[type=password]:focus{
+     border-bottom: 1px solid #fff;
+     box-shadow: 0 1px 0 0 #fff;
+   }
+   /* label underline focus color */
+   .input-field input[type=text], input[type=password] {
+     border-bottom: 1px solid #fff;
+     box-shadow: 0 1px 0 0 #fff;
+   }
 
 .home-logo {
   width: 100%;
@@ -73,7 +91,7 @@ body, html {
       .option-box{
         display: flex;
         margin:auto;
-        button {
+        a {
           margin: auto;
           margin-right:2rem;
           width: 10rem;
@@ -85,10 +103,31 @@ body, html {
           letter-spacing: 0.06rem;
           span{
             text-transform: none;
+            position: relative;
+            top: 0.2rem;
           }
         }
-        button:last-child{
+        a:last-child{
           margin-right:0rem;
+        }
+      }
+    }
+
+
+    .login-form{
+      display: flex;
+      width:100%;
+      align-content: center;
+      align-items: center;
+      .login-form-box{
+        display: flex;
+        margin:auto;
+        #login-form{
+          display: none;
+          #clickLogin{
+            border-radius:1rem;
+             font-weight: bold;
+          }
         }
       }
     }
