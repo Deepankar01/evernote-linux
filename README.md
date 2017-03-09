@@ -22,4 +22,7 @@ To run the code
 ```shell
 npm start
 ```
-
+To setup 
+```shell
+npm install
+```
