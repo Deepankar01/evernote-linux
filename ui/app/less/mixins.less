@@ -49,4 +49,65 @@ input:-webkit-autofill {
   left: -5px;
   width: 9px;
   height: 18px;
+  border-right: 2px solid @evernote-color;
+  border-bottom: 2px solid @evernote-color;
 }
+
+.share{
+  .fa-share-square{
+    display: none;
+  }
+  &:hover{
+    .fa-share-square-o{
+      display: none;
+    }
+    .fa-share-square{
+      display: inline-block;
+    }
+  }
+}
+
+.remind{
+  .fa-bell{
+    display: none;
+  }
+  &:hover{
+    .fa-bell-o{
+      display: none;
+    }
+    .fa-bell{
+      display: inline-block;
+    }
+  }
+}
+
+
+.star{
+  .fa-star{
+    display: none;
+  }
+  &:hover{
+    .fa-star-o{
+      display: none;
+    }
+    .fa-star{
+      display: inline-block;
+    }
+  }
+}
+
+.trash{
+  .fa-trash{
+    display: none;
+  }
+  &:hover{
+    .fa-trash-o{
+      display: none;
+    }
+    .fa-trash{
+      display: inline-block;
+    }
+  }
+}
+
+

@@ -67,13 +67,13 @@ body, html {
   }
   .expbar1 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: @expbar1-width;
     background-color: @expbar1-color;
     .heading-content {
       display: flex;
       flex-direction: column;
-      height: 6.3vw;
+      height: 7.3vw;
       width: 100%;
       border-bottom: 0.1rem solid @evernote-toolbar-border-color;
       .heading {
@@ -123,19 +123,18 @@ body, html {
             }
             li {
 
-              &:hover{
+              &:hover {
                 background-color: @evernote-color;
-                [type="checkbox"]:checked+label:before{
+                [type="checkbox"]:checked + label:before {
                   border-right: 2px solid #ffffff;
                   border-bottom: 2px solid #ffffff;
                 }
-                label{
-                  color:white;
+                label {
+                  color: white;
                 }
-                span{
+                span {
                   background-color: white;
                 }
-
 
               }
               min-height: 22px;
@@ -161,6 +160,67 @@ body, html {
         }
       }
 
+    }
+
+    .notes-short-box {
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      height: 100%;
+      .active{
+        border:0.2rem solid @active-note-border-color;
+      }
+      .note-box {
+        height: 10.3vw;
+        width: 100%;
+        padding: 1.3rem 1rem;
+        transition: background-color .5s;
+
+        &:hover {
+          border:0;
+          background-color: @evernote-color;
+          color: white;
+          .note {
+            .heading-box {
+              .heading {
+                width: 50%;
+              }
+              .heading-toolbox {
+                display: flex;
+                flex-direction: row;
+                //width: 50%;
+                i{
+                  margin-right: 0.33rem;
+                }
+                .tool{
+                  font-size: 1.3rem;
+                }
+              }
+            }
+          }
+
+        }
+        .note {
+          height: 100%;
+          border-bottom: 1px solid @evernote-toolbar-border-color;
+          .heading-box {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            .heading {
+              width: 100%;
+              span{
+                font-size: 1rem;
+                font-weight: 600;
+              }
+            }
+            .heading-toolbox {
+              display: none;
+            }
+          }
+        }
+      }
     }
 
   }
