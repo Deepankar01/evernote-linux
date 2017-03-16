@@ -1,85 +1,173 @@
 @import 'variables';
 @import 'mixins';
 
-body,html{
-    height:100%;
-    width:100%;
-    display: flex;
+body, html {
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
-.main{
+
+.main {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  .toolsbar {
     display: flex;
-    width:100%;
+    flex-direction: column;
+    width: @toolbar-width;
+    background-color: @evernote-toolbar-color;
+    border-right: 0.21rem solid @evernote-toolbar-border-color;
+    .evernote-logo {
+      margin: auto;
+      border-bottom: 0.2rem solid @evernote-toolbar-border-color;
+      img {
+        height: 3.2rem;
+        margin-bottom: 1rem;
+        align-self: flex-start;
+      }
+    }
+    .user-photo {
+      margin: auto;
+      padding: 1rem;
+      padding-top: 3rem;
+      border-top: 0.2rem solid @evernote-toolbar-border-color;
+      i {
+        align-self: flex-end;
+        font-size: 1.6rem;
+        color: @evernote-tool-icons;
+      }
+    }
+    .tool {
+      margin: auto;
+      margin-top: 0.0rem;
+      .active {
+        color: @evernote-toolbar-icon-active-color;
+        &:hover {
+          color: @evernote-toolbar-icon-active-color;
+        }
+      }
+      i {
+        font-size: 1.6rem;
+        padding: 0rem 1rem 0rem 1rem;
+        color: @evernote-tool-icons;
+        &:hover {
+          color: @evernote-toolbar-icon-hover-color;
+        }
+      }
+
+    }
+
+    .tool:nth-child(4) {
+      padding-bottom: 1rem;
+      border-bottom: 0.2rem solid @evernote-toolbar-border-color;
+    }
+    .tool:nth-child(5) {
+      padding-top: 0.3rem;
+    }
+  }
+  .expbar1 {
+    display: flex;
     flex-direction: row;
-    .toolsbar{
-        display: flex;
-        flex-direction: column;
-        width:@toolbar-width;
-        background-color: @evernote-toolbar-color;
-        border-right: 0.21rem solid @evernote-toolbar-border-color;
-        .evernote-logo{
-            margin: auto;
-              border-bottom:0.2rem solid @evernote-toolbar-border-color;
-            img{
-                height:3.2rem;
-                margin-bottom:1rem;
-                align-self: flex-start;
-            }
-        }
-        .user-photo{
-            margin:auto;
-            padding: 1rem;
-            padding-top: 3rem;
-            border-top:0.2rem solid @evernote-toolbar-border-color;
-            i {
-                align-self: flex-end;
-                font-size: 1.6rem;
-                color: @evernote-tool-icons;
-            }
-        }
-        .tool{
-            margin: auto;
-            margin-top:0.0rem;
-             .active{
-                    color: @evernote-toolbar-icon-active-color;
-                    &:hover{ color:@evernote-toolbar-icon-active-color;}
-                }
-            i {
-                font-size: 1.6rem;
-                padding:0rem 1rem 0rem 1rem;
-                color: @evernote-tool-icons;
-                &:hover { color:@evernote-toolbar-icon-hover-color; }
-             }
-             
+    width: @expbar1-width;
+    background-color: @expbar1-color;
+    .heading-content {
+      display: flex;
+      flex-direction: column;
+      height: 6.3vw;
+      width: 100%;
+      border-bottom: 0.1rem solid @evernote-toolbar-border-color;
+      .heading {
+        padding: 1rem;
+        padding-bottom: 0;
+        span {
+          letter-spacing: 0.1rem;
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: @expbar1-heading-color;
         }
 
-        .tool:nth-child(4){
-            padding-bottom: 1rem;
-             border-bottom: 0.2rem solid @evernote-toolbar-border-color;
-        }
-        .tool:nth-child(5){
-            padding-top:0.3rem;
-        }
-    }
-    .expbar1{
+      }
+      .notes-options-box {
         display: flex;
-        flex-direction: row;
-        width:@expbar1-width;
-        background-color: @expbar1-color;
-        .heading{
-            align-self: flex-start;
-            padding:1rem;
-            span{
-                letter-spacing: 0.1rem;
-                font-size:1.5rem;
-                font-weight:500;
-                color:@expbar1-heading-color;
+        padding: 1rem;
+        padding-top: 0.5rem;
+        justify-content: space-between;
+        .notes-count {
+          span {
+            color: @expbar1-heading-color;
+            font-size: 0.7rem;
+            letter-spacing: 0.06rem;
+          }
+        }
+        .notes-options {
+
+          a {
+            color: @expbar1-heading-color;
+            font-size: 0.7rem;
+            letter-spacing: 0.06rem;
+          }
+
+          .dropdown-button {
+
+            &:after {
+              font-family: FontAwesome, sans-serif;
+              content: "\f107";
+              font-size: 0.8rem;
+              padding-left: 0.2rem;
             }
+          }
+
+          ul {
+            .divider {
+              min-height: 1px;
+            }
+            li {
+
+              &:hover{
+                background-color: @evernote-color;
+                [type="checkbox"]:checked+label:before{
+                  border-right: 2px solid #ffffff;
+                  border-bottom: 2px solid #ffffff;
+                }
+                label{
+                  color:white;
+                }
+                span{
+                  background-color: white;
+                }
+
+
+              }
+              min-height: 22px;
+              span {
+                font-size: 0.8rem;
+                letter-spacing: 0.3rem;
+                color: @expbar1-heading-color;
+                padding: 11px 15px;
+              }
+              p {
+                padding-left: 1.1rem;
+                font-size: 1rem;
+                padding-right: 1.1rem;
+                label {
+                  font-size: 0.8rem;
+                  font-weight: bolder;
+                  letter-spacing: 0.01rem;
+                }
+              }
+            }
+
+          }
         }
+      }
+
     }
-    .expbar2{
-        display: flex;
-        flex-direction: column;
-        width:@expbar2-width;
-        background-color: seagreen;
-    }
+
+  }
+  .expbar2 {
+    display: flex;
+    flex-direction: column;
+    width: @expbar2-width;
+    background-color: seagreen;
+  }
 }

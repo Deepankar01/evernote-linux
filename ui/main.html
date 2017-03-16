@@ -4,76 +4,148 @@
 <head>
     <script src="public/build/vendor/pacejs/pace.min.js"></script>
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="public/build/vendor/materialize/css/materialize.min.css" media="screen,projection"
+    <link type="text/css" rel="stylesheet" href="public/build/vendor/materialize/css/materialize.min.css"
+          media="screen,projection"
     />
-    <link type="text/css" rel="stylesheet" href="public/build/vendor/fontawesome/css/font-awesome.min.css" media="screen,projection"
+    <link type="text/css" rel="stylesheet" href="public/build/vendor/fontawesome/css/font-awesome.min.css"
+          media="screen,projection"
     />
-    <link type="text/css" rel="stylesheet" href="public/build/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="public/build/css/main.css"/>
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
 
-    <div class="main">
+<div class="main">
 
-        <div class="toolsbar">
-            <!--evernote log-->
-            <div class="evernote-logo">
-                <img src="public/build/images/elephant.svg" />
-            </div>
-            <!--end evernote logo-->
-
-            <!--tool icon-->
-            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
-                <i class="fa fa-plus active"></i>
-            </div>
-            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
-                <i class="fa fa-search"></i>
-            </div>
-            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
-                <i class="fa fa-comments-o"></i>
-            </div>
-            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
-                <i class="fa fa-star-o"></i>
-            </div>
-            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
-                <i class="fa fa-book"></i>
-            </div>
-            <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
-                <i class="fa fa-tags"></i>
-            </div>
-            <!--end of tool icon-->
-
-            <!--user photo-->
-            <div class="user-photo">
-                <i class="fa fa-user"></i>
-            </div>
-            <!--end user photo-->
+    <div class="toolsbar">
+        <!--evernote log-->
+        <div class="evernote-logo">
+            <img src="public/build/images/elephant.svg"/>
         </div>
+        <!--end evernote logo-->
 
-        <div class="expbar1">
+        <!--tool icon-->
+        <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+            <i class="fa fa-plus active"></i>
+        </div>
+        <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+            <i class="fa fa-comments-o"></i>
+        </div>
+        <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+            <i class="fa fa-star-o"></i>
+        </div>
+        <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+            <i class="fa fa-pencil-square-o"></i>
+        </div>
+        <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+            <i class="fa fa-book"></i>
+        </div>
+        <div class="tool tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">
+            <i class="fa fa-tags"></i>
+        </div>
+        <!--end of tool icon-->
+
+        <!--user photo-->
+        <div class="user-photo">
+            <i class="fa fa-user"></i>
+        </div>
+        <!--end user photo-->
+    </div>
+
+    <div class="expbar1">
+        <div class="heading-content">
             <div class="heading">
                 <span>Notes</span>
             </div>
-        </div>
+            <div class="notes-options-box">
+                <div class="notes-count">
+                    <span>36 notes</span>
+                </div>
+                <div class="notes-options">
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-button' href='#' data-constrainwidth="false" data-activates='dropdown1' data-beloworigin="true">Options</a>
 
-        <div class="expbar2">asdads</div>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><span>SORT BY</span></li>
+                        <li>
+                            <p>
+                                <input type="checkbox" id="date-created-oldest" />
+                                <label for="date-created-oldest">Date Created (oldest first)</label>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <input type="checkbox" id="date-created-newest" />
+                                <label for="date-created-newest">Date Created (newest first)</label>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <input type="checkbox" id="date-updated-oldest" />
+                                <label for="date-updated-oldest">Date Updated (oldest first)</label>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <input type="checkbox" id="date-updated-newest" />
+                                <label for="date-updated-newest">Date Updated (newest first)</label>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <input type="checkbox" id="title-ascending" />
+                                <label for="title-ascending">Title (ascending)</label>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <input type="checkbox" id="title-descending" />
+                                <label for="title-descending">Title (descending)</label>
+                            </p>
+                        </li>
+                        <li class="divider"></li>
+                        <li><span>VIEW OPTIONS</span></li>
+                        <li>
+                            <p>
+                                <input type="checkbox" class="filled-in" id="show-images"/>
+                                <label for="show-images">Show images</label>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <input type="checkbox" class="filled-in" id="show-text"/>
+                                <label for="show-text">Show text</label>
+                            </p>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
 
     </div>
 
+    <div class="expbar2">asdads</div>
 
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="public/build/vendor/jquery/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="public/build/vendor/materialize/js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.tooltipped').tooltip({ delay: 50 });
-        });
-    </script>
+</div>
+
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="public/build/vendor/jquery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="public/build/vendor/materialize/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.tooltipped').tooltip({delay: 50});
+    });
+</script>
 </body>
 
 </html>
