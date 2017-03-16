@@ -129,6 +129,10 @@ body, html {
                   border-right: 2px solid #ffffff;
                   border-bottom: 2px solid #ffffff;
                 }
+                [type="checkbox"].filled-in:checked+label:after{
+                  border: 2px solid #FFFFFF;
+                  background-color: @evernote-color;
+                }
                 label {
                   color: white;
                 }
@@ -177,13 +181,18 @@ body, html {
         transition: background-color .5s;
 
         &:hover {
-          border:0;
           background-color: @evernote-color;
           color: white;
           .note {
             .heading-box {
               .heading {
                 width: 50%;
+                div{
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+
               }
               .heading-toolbox {
                 display: flex;
@@ -195,6 +204,11 @@ body, html {
                 .tool{
                   font-size: 1.3rem;
                 }
+              }
+            }
+            .time-box{
+              .time-box-content{
+                color:white;
               }
             }
           }
@@ -210,13 +224,40 @@ body, html {
             justify-content: space-between;
             .heading {
               width: 100%;
-              span{
+              div{
                 font-size: 1rem;
                 font-weight: 600;
+                text-overflow: ellipsis;
+                white-space:nowrap;
+                overflow: hidden;
               }
             }
             .heading-toolbox {
               display: none;
+            }
+          }
+          .time-box{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            .time-box-content{
+              font-size: 0.7rem;
+              color: @note-last-edited-color;
+              letter-spacing: .1rem;
+            }
+
+          }
+          .content-box{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-top: 0.3rem;
+            .content-box-text{
+              font-size: 0.88rem;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              width: 100%;
             }
           }
         }
