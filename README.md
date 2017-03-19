@@ -9,14 +9,14 @@ This is an unofficial release but have tried to make the look and feel of the ap
 
 **Almost at the point of UI Completion** 
 
-![Evernote screenshot](https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote.png)
+<kbd>![Evernote screenshot](https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote.png)</kbd>
 
-![Evernote screenshot2](https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote2.png)
+<kbd>![Evernote screenshot2](https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote2.png)</kbd>
 
 
-If you want to contribute please send PR requests
+**If you want to contribute please send PR requests**
 
- To build the code
+ To build the ui code
 
 ```shell
 cd ui && gulp
