@@ -7,11 +7,11 @@ Evernote for linux
 
 This is an unofficial release but have tried to make the look and feel of the application as original as possible. 
 
-Almost at the point of UI Completion 
+**Almost at the point of UI Completion** 
 
 ![Evernote screenshot](https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote.png)
 
-![Evernote screenshot2] (https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote2.png)
+![Evernote screenshot2](https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote2.png)
 
 
 If you want to contribute please send PR requests
