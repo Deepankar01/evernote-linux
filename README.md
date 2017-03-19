@@ -4,14 +4,13 @@
 Evernote for linux
 
 <p align="center">
-
 <img src="https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote-linux-logo.png" alt="Evernote linux logo" width="250"><br>
+<i>This is an unofficial release but have tried to make the look and feel of the application as original as possible.</i><br><br>
+</p>  
+  
+  
 
-<i>This is an unofficial release but have tried to make the look and feel of the application as original as possible.</i>
-
-</p>
-
-> Current Status 
+> ## Current Status 
 
 **Almost at the point of UI Completion** 
 
