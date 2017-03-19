@@ -7,23 +7,17 @@ Evernote for linux
 
 This is an unofficial release but have tried to make the look and feel of the application as original as possible. 
 
-Still under construction 
+Almost at the point of UI Completion 
+
 ![Evernote screenshot](https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote.png)
 
-If you want to have a look or contribute please send PR requests
+![Evernote screenshot2] (https://github.com/Deepankar01/evernote-linux/blob/master/screenshots/evernote2.png)
+
+
+If you want to contribute please send PR requests
 
  To build the code
 
 ```shell
-npm build
-```
-
-To run the code
-
-```shell
-npm start
-```
-To setup 
-```shell
-npm install
+cd ui && gulp
 ```
